@@ -1,0 +1,5 @@
+Configure miss: camlib.h usability
+Configure miss: camlib.h presence
+Configure miss: camlib.h
+Configure miss: scsireq_t
+Configure miss: struct uscsi_cmd
