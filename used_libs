@@ -20,6 +20,7 @@ libgsttag-1.0.so.0
 libgstvideo-1.0.so.0
 libgthread-2.0.so.0
 libgtk-3.so.0
+libharfbuzz.so.0
 libisofs.so.6
 libm.so.6
 libnautilus-extension.so.1

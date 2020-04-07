@@ -4,7 +4,7 @@
 #
 Name     : brasero
 Version  : 3.12.2
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/sources/brasero/3.12/brasero-3.12.2.tar.xz
 Source0  : https://download.gnome.org/sources/brasero/3.12/brasero-3.12.2.tar.xz
 Summary  : Brasero Optical Media Burning library
@@ -128,20 +128,21 @@ man components for the brasero package.
 
 %prep
 %setup -q -n brasero-3.12.2
+cd %{_builddir}/brasero-3.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562788541
+export SOURCE_DATE_EPOCH=1586222319
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -154,11 +155,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1562788541
+export SOURCE_DATE_EPOCH=1586222319
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/brasero
-cp COPYING %{buildroot}/usr/share/package-licenses/brasero/COPYING
-cp libbrasero-media/COPYING %{buildroot}/usr/share/package-licenses/brasero/libbrasero-media_COPYING
+cp %{_builddir}/brasero-3.12.2/COPYING %{buildroot}/usr/share/package-licenses/brasero/a8fbfe9ec1bf1ce3c2bcb36856039d122f229df1
+cp %{_builddir}/brasero-3.12.2/libbrasero-media/COPYING %{buildroot}/usr/share/package-licenses/brasero/785d1499112c04b7b6261d1f0cf626211327e835
 %make_install
 %find_lang brasero
 
@@ -943,8 +944,8 @@ cp libbrasero-media/COPYING %{buildroot}/usr/share/package-licenses/brasero/libb
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/brasero/COPYING
-/usr/share/package-licenses/brasero/libbrasero-media_COPYING
+/usr/share/package-licenses/brasero/785d1499112c04b7b6261d1f0cf626211327e835
+/usr/share/package-licenses/brasero/a8fbfe9ec1bf1ce3c2bcb36856039d122f229df1
 
 %files man
 %defattr(0644,root,root,0755)
