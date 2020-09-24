@@ -4,7 +4,7 @@
 #
 Name     : brasero
 Version  : 3.12.2
-Release  : 2
+Release  : 3
 URL      : https://download.gnome.org/sources/brasero/3.12/brasero-3.12.2.tar.xz
 Source0  : https://download.gnome.org/sources/brasero/3.12/brasero-3.12.2.tar.xz
 Summary  : Brasero Optical Media Burning library
